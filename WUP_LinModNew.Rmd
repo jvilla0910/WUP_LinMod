@@ -134,12 +134,25 @@ a negative slope.
 
 ### Numerical results (cor)
 
-`
+```{r}
+data2=lm(SIMS~ARM+GRIP, data+data)
+summary(data2)
+```
+
+The residual is 2.288 a number significantly higher than SIM~ARM and SIM~GRIP; however the Adjusted RSquared is the lowest when compared to Model1 and Model2.
+P-value 0.0000000000000002 and adjusted R-Sqaured is 0.535
   
 ### Inferential  (Build 2-dimentional model.3)
 
+Both ARM at 0.6860073 and GRIP at 0.6398458 show a positive correlation and close in value.
+
 #### predict model.3 at target point
   
+```{r}
+predict.lm(data2, newdata =data.frame(GRIP =94, ARM = 88))
+```
+
+The target point is -5.2842
 
 ## Comparing nested models ANOVA Test
 
