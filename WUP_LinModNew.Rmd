@@ -157,7 +157,26 @@ The target point is -5.2842
 ## Comparing nested models ANOVA Test
 
 ### Model.1 vs Model.3
+
+```{r}
+anova(lmr,data2)
+```
+The Residual Degrees of Freedom (Res. Df) are 145. The Residual Sum of Squares (RSS) add up to 217 errors
+were reduced by 29.45 there are less errors in model2. Therefore model 2 is the best m
+
 ### Model.2 vs Model.3
 
-## Informally compare Model.1 with model.2
+```{r}
+anova(grip,data2)
+```
+The Residual Degree of Freedom (Res.Df) is 145. The Residual Sum of Squares (RSS) add up to All the
+errors together add up to 243.07. The errors were reduced by 54.639. Model2 is a better model than model1
+because more errors were corrected.
 
+## Informally compare Model.1 with model.2
+Model1 and model2 appear similar in that they are positive slope direction for the Standardized Residual
+Normal Q-Q plot. The remaining plots appear to be closer to a zero slope.
+The SIMS~GRIP correlation is 0.6398458 which is smaller than the SIMS~ARM correlation of 0.6860073 a
+difference of 0.0461615. Both model1 and model2 have residuals degree of freedom of 145. Model1 has a
+residual sum of squares of 217.88. Model2 has a residual sum of squares 243.07. The difference is
+25.19.
