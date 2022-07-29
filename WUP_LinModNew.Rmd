@@ -83,18 +83,52 @@ almost horizontal, or at zero slope.
 
 ### Now add in scatterplot
 
+```{r}
+plot(SIMS~GRIP,data=data)
+grip =lm(SIMS~GRIP,data=data)
+abline (grip)
+```
+
+The scatter plot shows GRIP on the X-axis and SIMS on the Y-Axis. for SIM~GRIP shows a positive linear
+correlation.
+
 
 ### Numerical results 
 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
+
+The correlation for SIMS~GRIP is 0.6398458 slightly smaller than the correlation between SIMS~ARM which
+is 0.686073. Model1 is a better model
 
 ### Inferential  (Build model.2)
   
+```{r}
+summary(grip)
+newdata=c(GRIP=94, ARM=88)
+```
+
+Residuals show 1.295 slightly higher than GRIP~ARM.
+P-value 0.00000000000000022 and adjusted R-Sqaured is 0.4053.
 
 #### predict model.2 at target point
 
+```{r}
+predictSIM = predict.lm(grip, newdata=data.frame(GRIP = 94, ARM = 88))
+print(predictSIM)
+```
+
+The target point is -0.5361
+
 #### now add the model fit to our plot for model.2
   
+```{r}
+plot(grip)
+```
 
+The standardized residuals Normal Q-Q graph shows a positive correlation. The remaining plot graphs show
+a negative slope.
 
 ## Model 3 SIM~ARM+GRIP
 
