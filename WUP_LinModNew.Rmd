@@ -63,11 +63,21 @@ P-value 0.00000000000000022 Adjusted R-Squared is 0.467
 
 #### Predict at target point
 
+```{r}
+predictSIM = predict.lm(lmr, newdata=data.frame(GRIP = 94, ARM = 88))
+print(predictSIM)
+```
 
-
+Predicted target point is positive 0.71.
 
 #### scatterplot with model fit
   
+```{r}
+plot(lmr)
+```
+
+The standardized residuals Normal Q-Q graph shows a positive correlation. The remaining plot graphs run
+almost horizontal, or at zero slope.  
 
 ## Model 2 SIM~GRIP
 
