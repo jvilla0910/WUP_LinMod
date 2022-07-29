@@ -35,12 +35,35 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 
 ### scatterplot
 
+```{r}
+plot(SIMS~ARM,data=data)
+lmr = lm(SIMS~ARM,data=data)
+abline
+```
+
+The scatter plot is for model1 SIMS~ARMS. ARM is the X-Axis, and SIMS is the Y-Axis. The plot shows a
+positive linear correlation.
+
 ### Numerical results
+
+```{r}
+cor(SIMS~ARM,data=data)
+```
+The correlation is 0.6860 the line is positive.
 
 
 ### Inferential  (Build model.1)
 
+```{r}
+summary(lmr)
+newdata=c(GRIP=94, ARM=88)
+```
+Residuals show 1.226 on 145 degrees of freedom.
+P-value 0.00000000000000022 Adjusted R-Squared is 0.467
+
 #### Predict at target point
+
+
 
 
 #### scatterplot with model fit
